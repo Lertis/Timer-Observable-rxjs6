@@ -1,0 +1,49 @@
+<mat-card class="card" [ngClass]="[cardStyle]">
+  <div class="buttons">
+    <div class="sb">
+      <button mat-icon-button color="primary" (click)="play()" [disabled]="playButtonDisable" id="play">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <label class="lt">Start</label>
+    </div>
+    <div class="sb">
+      <button mat-icon-button color="primary" (click)="pause()" [disabled]="pauseButtonDisable" id="pause">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <label class="lt">Pause</label>
+    </div>
+    <div class="sb">
+      <button mat-icon-button color="primary" (click)="resume()" [disabled]="resumeButtonDisable" id="resume">
+        <mat-icon>keyboard_tab</mat-icon>
+      </button>
+      <label class="lt">Resume</label>
+    </div>
+    <div class="sb">
+      <button mat-icon-button color="primary" (click)="stop()" [disabled]="stopButtonDisable" id="stop">
+        <mat-icon>stop</mat-icon>
+      </button>
+      <label class="lt">Stop</label>
+    </div>
+
+  </div>
+  <div class="labels">
+    <label>Hours: {{currentHour}}</label>
+    <label>Minutes: {{currentMinute}}</label>
+    <label>Seconds: {{currentSecond}}</label>
+  </div>
+</mat-card>
+
+<br>
+<div class="clock">
+  <div class="outer-clock-face">
+    <div class="marking marking-one"></div>
+    <div class="marking marking-two"></div>
+    <div class="marking marking-three"></div>
+    <div class="marking marking-four"></div>
+    <div class="inner-clock-face">
+      <div class="hand hour-hand" [ngStyle]="{'transform': 'rotate(' + $valueHour + 'deg)'}"></div>
+      <div class="hand min-hand" [ngStyle]="{'transform': 'rotate(' + $valueMinute + 'deg)'}"></div>
+      <div class="hand second-hand" [ngStyle]="{'transform': 'rotate(' + $valueSecond + 'deg)'}"></div>
+    </div>
+  </div>
+</div>
